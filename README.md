@@ -19,3 +19,13 @@ plotshape(isInsideBar, style=shape.triangleup, location=location.belowbar, color
 In this code, we first declare the version of Pine Script we are using (in this case, version 4). We also define the name of our script ("Inside Bar Detection") and set the overlay parameter to true, which allows the indicator to be displayed on top of the price chart.
 
 Next, we use the following code to determine whether a bar is an inside bar:
+```pine
+isInsideBar = low > low[1] and high < high[1]
+```
+An inside bar is a candlestick pattern where the current bar's high is lower than the previous bar's high, and the current bar's low is higher than the previous bar's low. In other words, the current bar is inside the range of the previous bar. We check for this condition using the code above and store the result in the `isInsideBar` variable.
+
+Finally, we plot the inside bars using the following code:
+```pine
+plotshape(isInsideBar, style=shape.triangleup, location=location.belowbar, color=color.green, size=size.small, transp=0)
+```
+This code uses the `plotshape` function to plot a green triangle below the bar if it is an inside bar. We set the `style` parameter to `shape.triangleup` to display a triangle pointing upwards, and the `location` parameter to `location.belowbar` to place the triangle below the bar. We also set the `size` parameter to `size.small` to make the triangle smaller, and the `transp` parameter to `0` to make it fully opaque.
