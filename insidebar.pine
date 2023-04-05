@@ -12,5 +12,5 @@ inside_bar = high < prev_high and low > prev_low
 // Plot Inside Bar
 plotshape(inside_bar, title="Inside Bar", style=shape.circle, color=color.green, transp=0, location=location.bottom)
 
-// Alert on Inside Bar
+// Alert on inside Bar
 alertcondition(inside_bar, title="Inside Bar", message="Inside Bar Detected")
