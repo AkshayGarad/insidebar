@@ -15,3 +15,5 @@ isInsideBar = low > low[1] and high < high[1]
 // Plot inside bar
 plotshape(isInsideBar, style=shape.triangleup, location=location.belowbar, color=color.green, size=size.small, transp=0)
 ```
+In this code, we first declare the version of Pine Script we are using (in this case, version 4). We also define the name of our script ("Inside Bar Detection") and set the overlay parameter to true, which allows the indicator to be displayed on top of the price chart.
+Next, we use the following code to determine whether a bar is an inside bar:
